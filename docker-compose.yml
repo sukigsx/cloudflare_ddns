@@ -1,0 +1,20 @@
+services:
+  ddns-updater:
+    build:
+      context: https://github.com/sukigsx/cloudflare_ddns.git  # Esta es la ruta de git para crear la imagen donde esta el scripts sh y el dockerfile
+      dockerfile: Dockerfile                                   # es el nombre del dockerfile
+    container_name: cloudflare_update_ip_ddns
+    environment:
+      AUTH_EMAIL: ""                                           #correo electronico de usuario de cloudflare
+      AUTH_METHOD: "global"
+      AUTH_KEY: ""                                             # la api_key que has gebnerado en cloudflare
+      ZONE_IDENTIFIER: ""                                      # la zona de claudflare
+      RECORD_NAMES: "uno.dominio.es dos.dominio.es"            # pones los subdominio a actualizar la ip, separados por espacios
+      TTL: "3600"
+      PROXY: "true"
+      SITENAME: ""
+      SLACKCHANNEL: ""
+      SLACKURI: ""
+      DISCORDURI: ""
+      TIEMPO_COMPROBAR_IPS: "60"                               # Tiempo en segundos para esperar antes de comprobar la IP nuevamente
+    restart: always
