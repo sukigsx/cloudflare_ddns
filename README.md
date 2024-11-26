@@ -32,7 +32,7 @@ Este archivo de Docker Compose configura un servicio para ejecutar el script de 
 
 Servicio ddns-updater:
 
-build: Construye una imagen Docker usando el archivo Dockerfile ubicado en /home/sukigsx/prueba.
+build: Construye una imagen Docker usando el archivo Dockerfile ubicado en https://github.com/sukigsx/cloudflare_ddns.git.
 container_name: Nombra al contenedor como ddns_updater.
 Variables de entorno (environment):
 
